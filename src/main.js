@@ -15,7 +15,6 @@ class BrowserInfo {
   // 获取系统版本号
   getSystemName () {
     this.agent.replace(/^[a-z]+\/\d+\.\d+\s?\(([a-z\d\s:;\.\/_-]+)\)/i, (match, $1) => {
-      // console.log(match, '===', $1)
       let result = {}
       if (/^Windows\s(?!p)/i.test($1)) {
         const [, _version] = $1.match(/NT\s(\d+\.\d+)/)
@@ -65,7 +64,7 @@ class BrowserInfo {
 
   getBrowserName () {
     // 需要匹配的浏览器名称
-    const browserNameList = ['QQBrowser', 'UCBrowser', 'Edge', 'OPR', 'Vivaldi', 'Firefox', 'Chrome', 'Safari']
+    const browserNameList = ['MicroMessenger', 'QQBrowser', 'UCBrowser', 'Edge', 'OPR', 'Vivaldi', 'Firefox', 'Chrome', 'Safari']
 
     const regexp = browserNameList.map(name => new RegExp(`${name}\\/(\\d+\\.)+\\d+`))
 
@@ -86,9 +85,20 @@ class BrowserInfo {
       browserName: 'Unknown',
       browserVersion: 'Unknown'
     }
+    const BROWSER_NAMES = {
+      QQBrowser: 'QQ浏览器',
+      UCBrowser: 'UC浏览器',
+      MicroMessenger: '微信',
+      Edge: 'Edge',
+      OPR: 'Opera',
+      Vivaldi: 'Vivaldi',
+      Firefox: 'Firefox',
+      Chrome: 'Chrome',
+      Safari: 'Safari'
+    }
     const [, name, version] = str.match(/([a-z]+)\/(\d+\.\d+)/i)
     return {
-      browserName: name,
+      browserName: BROWSER_NAMES[name],
       browserVersion: version
     }
   }
