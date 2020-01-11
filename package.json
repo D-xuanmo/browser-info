@@ -25,7 +25,7 @@
   },
   "repository": {
     "type": "git",
-    "url": "https://github.com/xuanmos/lib.git"
+    "url": "https://github.com/xuanmos/browser-info.git"
   },
   "keywords": ["browser"]
 }
