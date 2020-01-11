@@ -99,7 +99,8 @@ class BrowserInfo {
     const [, name, version] = str.match(/([a-z]+)\/(\d+\.\d+)/i)
     return {
       browserName: BROWSER_NAMES[name],
-      browserVersion: version
+      browserVersion: version,
+      browserEnName: name
     }
   }
 }
