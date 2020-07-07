@@ -18,7 +18,7 @@ class BrowserInfo {
       this.getSystemName()
       this.getBrowserName()
     } catch (error) {
-      console.error(`[getBrowserInfo Error] ${error}`)
+      console.warn(`[getBrowserInfo Error] ${error}`)
       this.result = {
         systemName: '',
         systemVersion: '',
@@ -74,7 +74,7 @@ class BrowserInfo {
           result.systemVersion = 'Unknown'
         }
       } catch (error) {
-        console.log(`[getBrowserInfo Error] ${error}`)
+        console.warn(`[getBrowserInfo Error] ${error}`)
         result.systemName = 'Unknown'
         result.systemVersion = 'Unknown'
       }
@@ -127,7 +127,7 @@ class BrowserInfo {
         browserEnName: name
       }
     } catch (error) {
-      console.log(`[getBrowserInfo Error] ${error}`)
+      console.warn(`[getBrowserInfo Error] ${error}`)
     }
   }
 }
