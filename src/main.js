@@ -1,3 +1,9 @@
+/**
+ * 通过navigator.userAgent获取浏览器版本与系统版本
+ * @param {string} navigator.userAgent
+ * @return {object}
+ */
+
 class BrowserInfo {
   constructor (userAgent) {
     this.agent = userAgent
@@ -8,8 +14,19 @@ class BrowserInfo {
   }
 
   init () {
-    this.getSystemName()
-    this.getBrowserName()
+    try {
+      this.getSystemName()
+      this.getBrowserName()
+    } catch (error) {
+      console.error(`[getBrowserInfo Error] ${error}`)
+      this.result = {
+        systemName: '',
+        systemVersion: '',
+        browserName: '',
+        browserVersion: '',
+        browserEnName: ''
+      }
+    }
   }
 
   // 获取系统版本号
