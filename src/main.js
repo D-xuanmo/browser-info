@@ -3,7 +3,6 @@
  * @param {string} navigator.userAgent
  * @return {object}
  */
-
 class BrowserInfo {
   constructor (userAgent) {
     this.agent = userAgent
@@ -87,7 +86,7 @@ class BrowserInfo {
 
   getBrowserName () {
     // 需要匹配的浏览器名称
-    const browserNameList = ['MicroMessenger', 'QQBrowser', 'UCBrowser', 'Edge', 'OPR', 'Vivaldi', 'Firefox', 'Chrome', 'Safari']
+    const browserNameList = ['MicroMessenger', 'QQBrowser', 'UCBrowser', 'Edge?', 'OPR', 'Vivaldi', 'Firefox', 'Chrome', 'Safari']
 
     const regexp = browserNameList.map(name => new RegExp(`${name}\\/(\\d+\\.)+\\d+`))
 
@@ -112,6 +111,7 @@ class BrowserInfo {
       QQBrowser: 'QQ浏览器',
       UCBrowser: 'UC浏览器',
       MicroMessenger: '微信',
+      Edg: 'Edge',
       Edge: 'Edge',
       OPR: 'Opera',
       Vivaldi: 'Vivaldi',
