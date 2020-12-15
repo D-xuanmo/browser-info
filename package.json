@@ -1,6 +1,6 @@
 {
   "name": "@xuanmo/browser-info",
-  "version": "1.0.7",
+  "version": "1.0.8",
   "private": false,
   "main": "dist/lib.umd.min.js",
   "author": "xuanmos <me@xuanmo.xin>",
@@ -27,5 +27,5 @@
     "type": "git",
     "url": "https://github.com/xuanmos/browser-info.git"
   },
-  "keywords": ["browser"]
+  "keywords": ["browser", "browser info"]
 }
