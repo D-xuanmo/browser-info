@@ -86,7 +86,17 @@ class BrowserInfo {
 
   getBrowserName () {
     // 需要匹配的浏览器名称
-    const browserNameList = ['MicroMessenger', 'QQBrowser', 'UCBrowser', 'Edge?', 'OPR', 'Vivaldi', 'Firefox', 'Chrome', 'Safari']
+    const browserNameList = [
+      'MicroMessenger',
+      'QQ(Browser)?',
+      'UCBrowser',
+      'Edge?',
+      'OPR',
+      'Vivaldi',
+      'Firefox',
+      'Chrome',
+      'Safari'
+    ]
 
     const regexp = browserNameList.map(name => new RegExp(`${name}\\/(\\d+\\.)+\\d+`))
 
@@ -107,25 +117,33 @@ class BrowserInfo {
       browserName: 'Unknown',
       browserVersion: 'Unknown'
     }
+
+    // key可支持正则表达式
     const BROWSER_NAMES = {
-      QQBrowser: 'QQ浏览器',
+      'QQ(Browser)?': 'QQ浏览器',
       UCBrowser: 'UC浏览器',
       MicroMessenger: '微信',
-      Edg: 'Edge',
-      Edge: 'Edge',
+      'Edge?': 'Edge',
       OPR: 'Opera',
       Vivaldi: 'Vivaldi',
       Firefox: 'Firefox',
       Chrome: 'Chrome',
       Safari: 'Safari'
     }
+
     try {
       const [, name, version] = str.match(/([a-z]+)\/(\d+\.\d+)/i)
-      return {
-        browserName: BROWSER_NAMES[name],
+      const result = {
         browserVersion: version,
         browserEnName: name
       }
+      for (const [key, value] of Object.entries(BROWSER_NAMES)) {
+        if (new RegExp(name).test(key)) {
+          result.browserName = value
+          break
+        }
+      }
+      return result
     } catch (error) {
       console.warn(`[getBrowserInfo Error] ${error}`)
     }
