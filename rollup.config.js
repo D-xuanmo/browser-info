@@ -8,7 +8,7 @@ export default [
 	{
 		input: 'index.js',
 		output: {
-			name: 'lib',
+			name: 'getBrowserInfo',
 			file: pkg.main,
 			format: 'umd'
 		},

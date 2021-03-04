@@ -1,6 +1,6 @@
 {
   "name": "@xuanmo/browser-info",
-  "version": "1.0.9",
+  "version": "1.0.10",
   "private": false,
   "main": "dist/lib.umd.min.js",
   "author": "xuanmos <me@xuanmo.xin>",
