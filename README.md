@@ -1,3 +1,5 @@
+# 此仓库不再维护，已转到 https://github.com/D-xuanmo/javascript-utils/blob/main/src/ua.ts
+
 # 获取浏览器信息
 > 通过`navigator.userAgent`获取操作系统版本号、浏览器版本号
 
